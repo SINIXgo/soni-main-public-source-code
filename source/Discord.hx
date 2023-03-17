@@ -1,7 +1,7 @@
 package;
 
 import Sys.sleep;
-import dis
+import 
 
 #if LUA_ALLOWED
 import llua.Lua;
