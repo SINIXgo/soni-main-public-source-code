@@ -478,13 +478,13 @@ class ChartingState extends MusicBeatState
 			
 				
 			
-		clear_notes.color = FlxColor.RED;
-		clear_notes.label.color = FlxColor.WHITE;
+		
+		
 
-		var stepperBPM:FlxUINumericStepper = new FlxUINumericStepper(10, 70, 1, 1, 1, 339, 1);
-		stepperBPM.value = Conductor.bpm;
-		stepperBPM.name = 'song_bpm';
-		blockPressWhileTypingOnStepper.push(stepperBPM);
+		
+		
+		
+		
 
 		var stepperSpeed:FlxUINumericStepper = new FlxUINumericStepper(10, stepperBPM.y + 35, 0.1, 1, 0.1, 10, 1);
 		stepperSpeed.value = _song.speed;
