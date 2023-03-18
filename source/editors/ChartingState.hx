@@ -453,8 +453,8 @@ class ChartingState extends MusicBeatState
 				
 				
 				
-			}
-		});
+			
+		
 
 		var saveEvents:FlxButton = new FlxButton(110, reloadSongJson.y, 'Save Events', function ()
 		{
