@@ -452,7 +452,7 @@ class ChartingState extends MusicBeatState
 				
 				
 				
-				changeSection(curSection);
+				
 			}
 		});
 
