@@ -451,7 +451,7 @@ class ChartingState extends MusicBeatState
 			
 				
 				
-				_song.events = events.events;
+				
 				changeSection(curSection);
 			}
 		});
