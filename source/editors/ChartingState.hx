@@ -444,47 +444,46 @@ class ChartingState extends MusicBeatState
 			var songName:String = Paths.formatToSongPath(_song.song);
 			var file:String = Paths.json(songName + '/events');
 			#if sys
-			if
+			if (#if MODS_ALLOWED FileSystem.exists(Paths.modsJson(songName + '/events')) || #end FileSystem.exists(file))
 			#else
 			if (OpenFlAssets.exists(file))
 			#end
-			
-				
-				
-				
-				
-			
-		
+			{
+				clearEvents();
+				var events:SwagSong = Song.loadFromJson('events', songName);
+				_song.events = events.events;
+				changeSection(curSection);
+			}
+		});
 
-		
-		
-			
-		
+		var saveEvents:FlxButton = new FlxButton(110, reloadSongJson.y, 'Save Events', function ()
+		{
+			saveEvents();
+		});
 
-		
-			
-				
-			
-							
-		
-		
+		var clear_events:FlxButton = new FlxButton(320, 310, 'Clear events', function()
+			{
+				openSubState(new Prompt('This action will clear current progress.\n\nProceed?', 0, clearEvents, null,ignoreWarnings));
+			});
+		clear_events.color = FlxColor.RED;
+		clear_events.label.color = FlxColor.WHITE;
 
-		
-			
+		var clear_notes:FlxButton = new FlxButton(320, clear_events.y + 30, 'Clear notes', function()
+			{
+				openSubState(new Prompt('This action will clear current progress.\n\nProceed?', 0, function(){for (sec in 0..._song.notes.length) {
+					_song.notes[sec].sectionNotes = [];
+				}
+				updateGrid();
+			}, null,ignoreWarnings));
 				
-					
-				
-				
-			
-				
-			
-		
-		
+			});
+		clear_notes.color = FlxColor.RED;
+		clear_notes.label.color = FlxColor.WHITE;
 
-		
-		
-		
-		
+		var stepperBPM:FlxUINumericStepper = new FlxUINumericStepper(10, 70, 1, 1, 1, 339, 1);
+		stepperBPM.value = Conductor.bpm;
+		stepperBPM.name = 'song_bpm';
+		blockPressWhileTypingOnStepper.push(stepperBPM);
 
 		var stepperSpeed:FlxUINumericStepper = new FlxUINumericStepper(10, stepperBPM.y + 35, 0.1, 1, 0.1, 10, 1);
 		stepperSpeed.value = _song.speed;
