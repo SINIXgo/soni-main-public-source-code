@@ -456,10 +456,10 @@ class ChartingState extends MusicBeatState
 			
 		
 
-		var saveEvents:FlxButton = new FlxButton(110, reloadSongJson.y, 'Save Events', function ()
-		{
-			saveEvents();
-		});
+		
+		
+			
+		
 
 		var clear_events:FlxButton = new FlxButton(320, 310, 'Clear events', function()
 			{
