@@ -158,7 +158,7 @@ class Codes extends MusicBeatState
                         canSelect = true;
                     }
                     
-                default: //Nothing lol
+                
                     code.text = '';
                     if(canSelect)
                         FlxG.camera.shake(0.015, 0.2);
