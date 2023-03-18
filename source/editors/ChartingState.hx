@@ -450,7 +450,7 @@ class ChartingState extends MusicBeatState
 			#end
 			
 				
-				var events:SwagSong = Song.loadFromJson('events', songName);
+				
 				_song.events = events.events;
 				changeSection(curSection);
 			}
