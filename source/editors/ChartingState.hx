@@ -449,7 +449,7 @@ class ChartingState extends MusicBeatState
 			if (OpenFlAssets.exists(file))
 			#end
 			
-				clearEvents();
+				
 				var events:SwagSong = Song.loadFromJson('events', songName);
 				_song.events = events.events;
 				changeSection(curSection);
