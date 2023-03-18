@@ -147,7 +147,7 @@ class Codes extends MusicBeatState
                         canSelect = true;
                     }
                     code.text = '';
-                case '6969': //Funni peter griffin running code
+               
                     FlxG.mouse.visible = false;
                     FlxG.sound.pause();
                     canSelect = false;
