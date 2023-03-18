@@ -2975,7 +2975,7 @@ class PlayState extends MusicBeatState
 		#else
 		if (OpenFlAssets.exists(file)) {
 		#end
-			var eventsData:Array<Dynamic> = Son
+			
 			for (event in eventsData) //Event Notes
 			{
 				for (i in 0...event[1].length)
