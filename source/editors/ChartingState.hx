@@ -475,9 +475,9 @@ class ChartingState extends MusicBeatState
 					
 				
 				
-			}, null,ignoreWarnings)
+			
 				
-			});
+			
 		clear_notes.color = FlxColor.RED;
 		clear_notes.label.color = FlxColor.WHITE;
 
