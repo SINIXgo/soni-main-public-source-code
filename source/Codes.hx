@@ -157,7 +157,7 @@ class Codes extends MusicBeatState
                         FlxG.mouse.visible = true;
                         canSelect = true;
                     }
-                    code.text = '';
+                    
                 default: //Nothing lol
                     code.text = '';
                     if(canSelect)
