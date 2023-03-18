@@ -263,7 +263,7 @@ class Paths
 
 			levelPath = getLibraryPathForce(key, 'shared');
 			
-				return File.getContent(levelPath);
+				
 		}
 		#end
 		return Assets.getText(getPath(key, TEXT));
