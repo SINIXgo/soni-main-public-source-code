@@ -140,7 +140,7 @@ class Codes extends MusicBeatState
                     FlxG.mouse.visible = false;
                     FlxG.sound.pause();
                     canSelect = false;
-					(new FlxVideo(Paths.video('die'))).finishCallback = function() {
+					
 
                         FlxG.sound.resume();
                         FlxG.mouse.visible = true;
@@ -151,7 +151,7 @@ class Codes extends MusicBeatState
                     FlxG.mouse.visible = false;
                     FlxG.sound.pause();
                     canSelect = false;
-					(new FlxVideo(Paths.video('Peter Griffin in City Escape'))).finishCallback = function() {
+					(new FlxVideo(
 
                         FlxG.sound.resume();
                         FlxG.mouse.visible = true;
