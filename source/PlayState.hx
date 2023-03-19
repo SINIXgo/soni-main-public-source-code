@@ -3154,7 +3154,7 @@ class PlayState extends MusicBeatState
 	}
 
 	
-				
+			public var skipArrowStartTween:Bool = false; // for lua	
 	private function generateStaticArrows(player:Int):Void
 	{
 		for (i in 0...4)
