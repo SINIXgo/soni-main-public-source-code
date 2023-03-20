@@ -408,6 +408,12 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
+	  #if android
+		addAndroidControls();		
+		androidControls.visible = true;	
+		#end	
+	
+	
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
 
@@ -2971,8 +2977,8 @@ class PlayState extends MusicBeatState
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		var file:String = Paths.json(songName + '/events');
 		#if sys
-		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {#if desktop
-		#else 
+		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
+		#else
 		if (OpenFlAssets.exists(file)) {
 		#end
 			var eventsData:Array<Dynamic> = Song.loadFromJson('events', songName).events;
@@ -3153,10 +3159,9 @@ class PlayState extends MusicBeatState
 		return FlxSort.byValues(FlxSort.ASCENDING, Obj1.strumTime, Obj2.strumTime);
 	}
 
-	// public var skipArrowStartTween:Bool = false; //for lua
-	private function generateStaticArrows(player:Int):Void			
+	public var skipArrowStartTween:Bool = false; //for lua
+	private function generateStaticArrows(player:Int):Void
 	{
-	
 		for (i in 0...4)
 		{
 			// FlxG.log.add(i);
