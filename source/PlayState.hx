@@ -1930,7 +1930,10 @@ class PlayState extends MusicBeatState
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
 
-		strumLineNotes = new FlxTypedGroup<StrumNote>();
+		strumLineNotes = new FlxTypedGroup<StrumNote>();#if android
+		addAndroidControls();		
+		androidControls.visible = true;	
+		#end
 		add(strumLineNotes);
 		add(grpNoteSplashes);
 
