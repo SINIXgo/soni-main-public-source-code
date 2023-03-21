@@ -3001,7 +3001,7 @@ class PlayState extends MusicBeatState
 		}
 
 		
-		{
+		
 			for (songNotes in section.sectionNotes)
 			{
 				var daStrumTime:Float = songNotes[0];
