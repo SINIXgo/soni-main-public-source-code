@@ -3000,7 +3000,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		for (section in noteData)
+		
 		{
 			for (songNotes in section.sectionNotes)
 			{
