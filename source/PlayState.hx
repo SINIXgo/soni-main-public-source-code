@@ -408,12 +408,6 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
-	  #if android
-		addAndroidControls();		
-		androidControls.visible = true;	
-		#end	
-	
-	
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
 
@@ -2977,7 +2971,7 @@ class PlayState extends MusicBeatState
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		var file:String = Paths.json(songName + '/events');
 		#if sys
-		
+		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
 		#else
 		if (OpenFlAssets.exists(file)) {
 		#end
@@ -3000,8 +2994,8 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		
-		
+		for (section in noteData)
+		{
 			for (songNotes in section.sectionNotes)
 			{
 				var daStrumTime:Float = songNotes[0];
