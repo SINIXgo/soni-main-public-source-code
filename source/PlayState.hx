@@ -437,7 +437,7 @@ class PlayState extends MusicBeatState
 			camHUD.filtersEnabled = true;
 			camNotes.filtersEnabled = true;
 		}
-		filters.push(chromaticAberration);
+		filters.push x
 
 		GameOverSubstate.resetVariables();
 		var songName:String = Paths.formatToSongPath(SONG.song);
