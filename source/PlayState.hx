@@ -3507,7 +3507,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if(Paths.formatToSongPath(SONG.song) == 'broken-reality' && ClientPrefs.funnyShaders)
-			setChrome(bilSucks);
+			(bilSucks);
 
 		super.update(elapsed);
 
