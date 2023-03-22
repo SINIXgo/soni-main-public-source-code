@@ -42,7 +42,7 @@ class OptionsState extends MusicBeatState
 				#end
 				openSubState(new options.NotesSubState());
 			case 'Controls':
-        #if android
+                                #if android
 				removeVirtualPad();
 				#end
 				openSubState(new options.ControlsSubState());
@@ -59,7 +59,8 @@ class OptionsState extends MusicBeatState
 			case 'Gameplay':
 				#if android
 				removeVirtualPad();
-				#endopenSubState(new options.GameplaySettingsSubState());
+				#end
+				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
 		}
