@@ -85,7 +85,7 @@ class WeekData {
 	{
 		weeksList = [];
 		weeksLoaded.clear();
-		#if desktop 
+		#if windows 
 		var disabledMods:Array<String> = [];
 		var modsListPath:String = 'modsList.txt';
 		var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
@@ -204,7 +204,7 @@ class WeekData {
 
 	private static function getWeekFile(path:String):WeekFile {
 		var rawJson:String = null;
-		#if desktop 
+		#if windows 
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
@@ -243,7 +243,7 @@ class WeekData {
 	{
 		Paths.currentModDirectory = '';
 		
-		#if desktop 
+		#if windows 
 		if (FileSystem.exists("modsList.txt"))
 		{
 			var list:Array<String> = CoolUtil.listFromString(File.getContent("modsList.txt"));
