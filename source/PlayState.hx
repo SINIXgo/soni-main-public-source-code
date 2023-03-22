@@ -395,6 +395,11 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
+		#if android
+		addAndroidControls();
+		androidControls.visible = true;
+		#end
+		
 		FlxCamera.defaultCameras = [camGame];
 		CustomFadeTransition.nextCamera = camOther;
 		//FlxG.cameras.setDefaultDrawTarget(camGame, true);
@@ -1930,10 +1935,7 @@ class PlayState extends MusicBeatState
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
 
-		#if android
-		addAndroidControls();		
-		androidControls.visible = true;		
-		#end		
+		
 				
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(strumLineNotes);
