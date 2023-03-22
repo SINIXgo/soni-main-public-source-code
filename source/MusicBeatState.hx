@@ -14,7 +14,12 @@ import flixel.util.FlxGradient;
 import openfl.filters.ShaderFilter;
 import flixel.FlxState;
 import flixel.FlxBasic;
-
+#if android
+import android.AndroidControls;
+import android.flixel.FlxVirtualPad;
+import flixel.input.actions.FlxActionInput;
+import flixel.util.FlxDestroyUtil;
+#end
 class MusicBeatState extends FlxUIState
 {
 	private var lastBeat:Float = 0;
