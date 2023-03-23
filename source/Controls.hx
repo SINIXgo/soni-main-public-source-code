@@ -14,8 +14,9 @@ import flixel.input.keyboard.FlxKey;
 import android.flixel.FlxButton;
 import android.flixel.FlxHitbox;
 import android.flixel.FlxVirtualPad;
-#if (haxe >= "4.0.0")
-	
+#end
+
+#if (haxe >= "4.0.0")	
 enum abstract Action(String) to String from String
 {
 	var UI_UP = "ui_up";
