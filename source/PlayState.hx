@@ -395,10 +395,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
-		#if android
-		addAndroidControls();
-		androidControls.visible = true;
-		#end
+		
 		
 		FlxCamera.defaultCameras = [camGame];
 		CustomFadeTransition.nextCamera = camOther;
@@ -2092,6 +2089,11 @@ class PlayState extends MusicBeatState
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
 
+		#if android
+		addAndroidControls();
+		androidControls.visible = true;
+		#end
+			
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 
